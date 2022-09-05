@@ -1,15 +1,20 @@
 {
-  "name": "vue-dataset",
-  "description": "A vue component to display datasets with filtering, paging and sorting capabilities!",
-  "version": "0.0.0-semantic-release",
-  "author": "Giannis Koutsaftakis",
+  "name": "vue-dataset-custom-search",
+  "description": "Fork of vue-dataset that adds custom search capabilities",
+  "version": "1.1.16",
+  "author": "Giannis Koutsaftakis - Pieter-Jan De Bruyne",
   "license": "MIT",
-  "repository": "https://github.com/kouts/vue-dataset",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorst-app/vue-dataset-custom-search.git"
+  },
   "keywords": [
     "vue",
     "component",
     "dataset",
-    "datatable"
+    "datatable",
+    "custom",
+    "search"
   ],
   "main": "./dist/umd/VueDataset.js",
   "module": "./dist/es/index.js",
@@ -71,5 +76,13 @@
     "vue-template-compiler": "^2.7.8",
     "vuepress": "^1.9.7",
     "vuepress-plugin-vue-example": "^1.1.6"
+  },
+  "bugs": {
+    "url": "https://github.com/kouts/vue-dataset/issues"
+  },
+  "homepage": "https://github.com/kouts/vue-dataset#readme",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
   }
 }
