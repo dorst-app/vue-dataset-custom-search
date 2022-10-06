@@ -66,7 +66,9 @@ var script = {
         var this$1$1 = this;
 
         return function (dataset, searchVal) {
-          return dataset.filter(function (entry) { return findAny(this$1$1.dsSearchIn, this$1$1.dsSearchAs, entry.value, searchVal) })
+          return dataset.filter(function (entry) {
+            return findAny(this$1$1.dsSearchIn, this$1$1.dsSearchAs, entry.value, searchVal)
+          })
         }
       }
     }
@@ -141,8 +143,6 @@ var script = {
         var dsSearch = this.dsSearch;
         var dsSortby = this.dsSortby;
         var dsFilterFields = this.dsFilterFields;
-        this.dsSearchIn;
-        this.dsSearchAs;
         var dsSortAs = this.dsSortAs;
 
         if (!dsSearch && !dsSortby.length && isEmptyObject(dsFilterFields)) {
