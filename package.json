@@ -1,8 +1,8 @@
 {
   "name": "vue-dataset-custom-search",
   "description": "Fork of vue-dataset that adds custom search capabilities",
-  "version": "1.1.16",
-  "author": "Giannis Koutsaftakis - Pieter-Jan De Bruyne",
+  "version": "1.1.17",
+  "author": "",
   "license": "MIT",
   "repository": {
     "type": "git",
