@@ -72,7 +72,9 @@ export default {
       type: Function,
       default: function () {
         return (dataset, searchVal) => {
-          return dataset.filter((entry) => { return findAny(this.dsSearchIn, this.dsSearchAs, entry.value, searchVal) })
+          return dataset.filter((entry) => {
+            return findAny(this.dsSearchIn, this.dsSearchAs, entry.value, searchVal)
+          })
         }
       }
     }
@@ -147,8 +149,6 @@ export default {
         const dsSearch = this.dsSearch
         const dsSortby = this.dsSortby
         const dsFilterFields = this.dsFilterFields
-        const dsSearchIn = this.dsSearchIn
-        const dsSearchAs = this.dsSearchAs
         const dsSortAs = this.dsSortAs
 
         if (!dsSearch && !dsSortby.length && isEmptyObject(dsFilterFields)) {
