@@ -162,5 +162,5 @@ function findAny(dsSearchIn, dsSearchAs, rowData, str) {
   return false
 }
 
-export { MORE_PAGES as M, findAny as a, fieldSorter as b, createPagingRange as c, debounce as d, fieldFilter as f, isEmptyObject as i };
-//# sourceMappingURL=index-fde6a0b4.js.map
+export { MORE_PAGES as M, fieldFilter as a, fieldSorter as b, createPagingRange as c, debounce as d, findAny as f, isEmptyObject as i };
+//# sourceMappingURL=index-9b814de6.js.map

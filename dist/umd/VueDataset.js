@@ -226,6 +226,16 @@
       dsSortAs: {
         type: Object,
         default: function () { return ({}); }
+      },
+      dsSearchFc: {
+        type: Function,
+        default: function () {
+          var this$1$1 = this;
+
+          return function (dataset, searchVal) {
+            return dataset.filter(function (entry) { return findAny(this$1$1.dsSearchIn, this$1$1.dsSearchAs, entry.value, searchVal) })
+          }
+        }
       }
     },
     data: function () {
@@ -298,8 +308,8 @@
           var dsSearch = this.dsSearch;
           var dsSortby = this.dsSortby;
           var dsFilterFields = this.dsFilterFields;
-          var dsSearchIn = this.dsSearchIn;
-          var dsSearchAs = this.dsSearchAs;
+          this.dsSearchIn;
+          this.dsSearchAs;
           var dsSortAs = this.dsSortAs;
 
           if (!dsSearch && !dsSortby.length && isEmptyObject(dsFilterFields)) {
@@ -316,7 +326,7 @@
 
             // Search it
             if (dsSearch) {
-              result = result.filter(function (entry) { return findAny(dsSearchIn, dsSearchAs, entry.value, dsSearch); });
+              result = this.dsSearchFc(result, dsSearch);
             }
 
             // Sort it

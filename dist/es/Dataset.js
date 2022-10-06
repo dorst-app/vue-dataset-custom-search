@@ -1,4 +1,4 @@
-import { c as createPagingRange, i as isEmptyObject, f as fieldFilter, a as findAny, b as fieldSorter } from './index-fde6a0b4.js';
+import { f as findAny, c as createPagingRange, i as isEmptyObject, a as fieldFilter, b as fieldSorter } from './index-9b814de6.js';
 import { n as normalizeComponent } from './normalize-component-1efcb3aa.js';
 
 var datasetI18n = {
@@ -59,6 +59,16 @@ var script = {
     dsSortAs: {
       type: Object,
       default: function () { return ({}); }
+    },
+    dsSearchFc: {
+      type: Function,
+      default: function () {
+        var this$1$1 = this;
+
+        return function (dataset, searchVal) {
+          return dataset.filter(function (entry) { return findAny(this$1$1.dsSearchIn, this$1$1.dsSearchAs, entry.value, searchVal) })
+        }
+      }
     }
   },
   data: function () {
@@ -131,8 +141,8 @@ var script = {
         var dsSearch = this.dsSearch;
         var dsSortby = this.dsSortby;
         var dsFilterFields = this.dsFilterFields;
-        var dsSearchIn = this.dsSearchIn;
-        var dsSearchAs = this.dsSearchAs;
+        this.dsSearchIn;
+        this.dsSearchAs;
         var dsSortAs = this.dsSortAs;
 
         if (!dsSearch && !dsSortby.length && isEmptyObject(dsFilterFields)) {
@@ -149,7 +159,7 @@ var script = {
 
           // Search it
           if (dsSearch) {
-            result = result.filter(function (entry) { return findAny(dsSearchIn, dsSearchAs, entry.value, dsSearch); });
+            result = this.dsSearchFc(result, dsSearch);
           }
 
           // Sort it
